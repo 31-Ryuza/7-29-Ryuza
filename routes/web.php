@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home', [
+        "link" => "home",
+        "title" => "Ryuza || Home",
         "nama" => "Ryuza Aly Syahputa",
         "email" => "alysyahputra.ryuza@gmail.com",
         "gambar" => "foto.jpeg"
@@ -22,11 +24,20 @@ Route::get('/', function () {
 });
 
 
-Route::get('/dashboard', function () {
-    return view('about');
+Route::get('/galery', function () {
+    return view('galery', [
+        "link" => "galery",
+        "title" => "Ryuza || Galery"
+    ]);
 });
 
 
 Route::get('/about', function () {
-    return view('galery');
+    return view('about', [
+        "link" => "about",
+        "title" => "Ryuza || About",
+        "nama" => "Ryuza Aly Syahputa",
+        "email" => "alysyahputra.ryuza@gmail.com",
+        "gambar" => "foto.jpeg"
+    ]);
 });
