@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,5 @@ Route::get('/about', function () {
         "gambar" => "foto.jpeg"
     ]);
 });
+
+Route::resource('/contact', ContactController::class);
