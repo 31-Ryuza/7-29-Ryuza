@@ -15,9 +15,9 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get('/', function () {
-    return view('home', [
+    return view('index', [
         "link" => "home",
-        "title" => "Ryuza || Home",
+        "title" => "Ryuza || Beranda",
         "nama" => "Ryuza Aly Syahputa",
         "email" => "alysyahputra.ryuza@gmail.com",
         "gambar" => "foto.jpeg"
@@ -44,3 +44,9 @@ Route::get('/about', function () {
 });
 
 Route::resource('/contact', ContactController::class);
+
+Auth::routes();
+
+Route::group(['middlawere' => ['auth']], function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
